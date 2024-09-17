@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Academia-Verse</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        header {
+            text-align: center;
+        }
+
+
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+
+
+        .signup-form {
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+
+        .signup-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+
+        .signup-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+
+        .signup-form button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+
+        .signup-form button:hover {
+            background-color: #2980b9;
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sign Up for Academia-Verse</h1>
+    </header>
+
+
+    <main>
+        <section class="signup-form">
+            <h2>Create Your Account</h2>
+            <form id="signup-form" method="post" action="signup.php">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name "email" required>
+
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+
+
+                <button type="submit">Sign Up</button>
+            </form>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2023 Academia-Verse</p>
+    </footer>
+</body>
+</html>

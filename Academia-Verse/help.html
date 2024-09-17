@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fill;
+            height: fill;
+            margin: 0;
+        }
+
+
+        .help-container {
+            width: fill;
+            height: fill;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+
+        h2 {
+            margin-top: 0;
+        }
+
+
+        .faq {
+            margin: 10px 0;
+        }
+
+
+        .question {
+            cursor: pointer;
+            font-size: 16px;
+            width:fill;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+
+        .answer {
+            display: flex;
+            padding: 10px;
+            align-content: left;
+        }
+
+
+        .question:hover {
+            background-color: #f9f9f9;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="help-container">
+        <h2>Help and FAQs</h2>
+        <div class="faq">
+            <div class="question opened">
+            How do I create a new thought?
+            </div>
+            <div class="answer">
+                <p>Creating a new thought is easy. Click the "New Thought" button on the main page, and you'll be prompted to enter your thought.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question opened">
+             Can I edit or delete my thoughts?
+            </div>
+            <div class="answer">
+                <p>Yes, you can edit or delete your thoughts. Go to your profile, click on the thought you want to edit or delete, and you'll find the options there.</p>
+            </div>
+        </div>
+        <!-- Add more FAQs as needed -->
+    </div>
+    <script>
+        document.querySelectorAll('.question').forEach(function(question) {
+            question.addEventListener('click', function() {
+                this.classList.toggle('opened');
+                this.classList.toggle('closed');
+                this.nextElementSibling.style.display = this.classList.contains('opened') ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia-Verse</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .navbar {
+            background-color: #3498db;
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+        }
+
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+
+        .navbar a:hover {
+            background-color: #2980b9;
+            color: #fff;
+        }
+
+
+        .search-bar {
+            float: right;
+            margin-right: 10px;
+        }
+
+
+        .search-bar input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin: 0;
+        }
+
+
+        h2 {
+            text-align: left;
+        }
+
+
+        p {
+            font-size: 18px;
+        }
+
+
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+
+
+        footer {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+
+        .thought-form {
+            text-align: left;
+            max-width: fill;
+            margin: 0 auto;
+        }
+
+
+        .thought-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+
+        .thought-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">AV LOGO</a>
+        <a href="login.html">Login</a>
+        <a href="profile.html">My Profile</a>
+        <a href="help.html">Get Help</a>
+        <a href="feedback.html">Give Feedback</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <div class="search-bar">
+            <input type="text" id="searchSubject" placeholder="Search by Subject" oninput="filterDoubts()">
+        </div>
+    </div>
+
+
+    <header>
+        <h1>Academia-Verse</h1>
+        <p>CONNECTING STUDENTS, IGNITING IDEAS!</p>
+    </header>
+
+
+    <main>
+        <section class="thought-form">
+            <h2>Share Your Doubt</h2>
+            <form id="thought-form">
+                <label for="subject">Select Subject:</label>
+                <select id="subject" name="subject">
+                    <option value="math">Math</option>
+                    <option value="science">Science</option>
+                    <option value="history">History</option>
+                    <option value="english">English</option>
+                    <!-- Add more subjects here -->
+                </select>
+                <label for="thought">Your Doubt:</label>
+                <textarea id="thought" name="thought" placeholder="What's on your mind?"></textarea>
+                <button type="submit">Post</button>
+            </form>
+        </section>
+   
+        <section class="thought-feed">
+            <h2>Feed</h2>
+            <ul id="thought-list"></ul>
+        </section>
+       <!-- <section class="thought-feed">
+            <h2>Feed</h2>
+            <ul id="thought-list">
+                <li class="thought" data-subject="math">Math doubt example</li>
+                <li class="thought" data-subject="science">Science doubt example</li>
+                <li class="thought" data-subject="history">History doubt example</li>
+                <li class="thought" data-subject="english">English doubt example</li>
+                 Add more thoughts with data-subject attribute
+            </ul>
+        </section>-->
+        <section class="signup-section">
+            <h2>Join Academia-Verse!</h2>
+            <p>New here? Sign up now and be a part of our academic community.</p>
+            <a href="signup.html" class="signup-button">Sign Up</a> <!-- Redirects to signup.html -->
+        </section>
+    </main>
+            </main>
+
+
+    <footer>
+        &copy; 2023 Academia-Verse
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script>
+        function filterDoubts() {
+            const searchSubject = document.getElementById("searchSubject").value.toLowerCase();
+            const thoughts = document.getElementsByClassName("thought");
+
+
+            for (let i = 0; i < thoughts.length; i++) {
+                const subject = thoughts[i].getAttribute("data-subject").toLowerCase();
+                if (subject.includes(searchSubject)) {
+                    thoughts[i].style.display = "block";
+                } else {
+                    thoughts[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
